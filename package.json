@@ -1,0 +1,28 @@
+{
+  "name": "cryptocanvas",
+  "version": "1.0.0",
+  "description": "◈ 将SHA-256哈希函数的雪崩效应转化为独一无二的生成艺术",
+  "keywords": [
+    "cryptography",
+    "generative-art",
+    "sha256",
+    "canvas",
+    "hash",
+    "avalanche-effect",
+    "creative-coding"
+  ],
+  "homepage": "https://github.com/your-username/cryptocanvas#readme",
+  "bugs": {
+    "url": "https://github.com/your-username/cryptocanvas/issues"
+  },
+  "license": "MIT",
+  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-username/cryptocanvas.git"
+  },
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "python -m http.server 8000"
+  }
+}

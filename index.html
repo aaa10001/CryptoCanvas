@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CryptoCanvas · 密码画布</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <span class="logo-icon">◈</span>
+        <h1>CryptoCanvas</h1>
+      </div>
+      <p class="subtitle">将哈希函数的雪崩效应转化为独一无二的生成艺术</p>
+    </header>
+
+    <main>
+      <section class="input-section">
+        <div class="input-wrapper">
+          <textarea id="inputText" placeholder="输入任何文字，见证哈希生成的艺术..." rows="3" autofocus>Hello, Crypto World!</textarea>
+          <div class="input-actions">
+            <button id="generateBtn" class="btn primary">
+              <span class="btn-icon">✦</span>
+              生成画布
+            </button>
+            <button id="randomBtn" class="btn secondary">
+              <span class="btn-icon">🎲</span>
+              随机
+            </button>
+            <button id="saveBtn" class="btn ghost">
+              💾 保存
+            </button>
+          </div>
+        </div>
+        <div class="hash-display">
+          <div class="hash-label">SHA-256 哈希</div>
+          <code id="hashOutput">等待生成...</code>
+          <div class="hash-stats">
+            <span id="inputLength">0</span> 字符 → <span id="hashLength">64</span> 十六进制字节
+          </div>
+        </div>
+      </section>
+
+      <section class="canvas-section">
+        <div class="canvas-header">
+          <h2>生成艺术 <span id="seedDisplay" class="seed-badge"></span></h2>
+          <div class="view-controls">
+            <button id="modeBtn" class="btn small">🎨 切换风格</button>
+            <button id="exportBtn" class="btn small">📤 导出PNG</button>
+          </div>
+        </div>
+        <div class="canvas-wrapper" id="canvasWrapper">
+          <canvas id="artCanvas"></canvas>
+          <div class="canvas-overlay" id="emptyState">
+            <span class="empty-icon">◈</span>
+            <p>输入文字并点击「生成画布」</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="info-section">
+        <div class="info-card">
+          <div class="info-icon">🔬</div>
+          <h3>雪崩效应</h3>
+          <p>SHA-256 哈希函数具有雪崩效应——输入中一个比特的改变，会导致输出中约 50% 的比特发生变化。在 CryptoCanvas 中，这意味着 <strong>"Hello"</strong> 和 <strong>"hello"</strong> 会生成完全不同的画作。</p>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">🎨</div>
+          <h3>算法驱动</h3>
+          <p>画布上的每个像素、形状、颜色和位置都由哈希值中的具体比特位精确控制。没有随机数，没有预置模板——<strong>你的输入就是唯一的美学密码</strong>。</p>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">🌐</div>
+          <h3>纯前端</h3>
+          <p>所有计算都在浏览器本地完成。使用 Web Crypto API 进行哈希计算，Canvas API 进行图形渲染。无需服务器，<strong>你的数据永远不会离开你的设备</strong>。</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>✨ 开源 · 创意 · 密码学艺术 — 在 GitHub 上贡献你的想法</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
